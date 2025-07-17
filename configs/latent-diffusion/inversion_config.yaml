@@ -79,7 +79,7 @@ data:
     train:
       target: ldm.data.imageloader.CustomTrain
       params:
-        image_path: "./ldm/data/image.png"
+        image_path: "./ldm/data/screenshot.png"
 
 lightning:
   trainer:
