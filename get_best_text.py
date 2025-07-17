@@ -17,7 +17,7 @@ def measure_clip_similarity(orig_images, pred_images, clip_model, device):
         pred_feat = pred_feat / pred_feat.norm(dim=1, keepdim=True)
         return (orig_feat @ pred_feat.t()).mean().item()
 
-model_id = "runwayml/stable-diffusion-v1-5"
+model_id = "stable-diffusion-v1-5/stable-diffusion-v1-5"
 scheduler = PNDMScheduler.from_pretrained(model_id, subfolder="scheduler", cache_dir='.')
 
 weight_dtype = torch.float16
@@ -31,7 +31,7 @@ image_length = 512
 
 best_loss=0.
 step =0
-image_path = './ldm/data/image.png'
+image_path = './ldm/data/screenshot.png'
 orig_image = Image.open(image_path).convert('RGB')
 with open('./logs_forward_pass/prompt_file.txt','r') as textfile:
     prompt = textfile.readlines()
